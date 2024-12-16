@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/planner.js" defer></script>
+    <style>
+        /* Flexbox layout to push footer to the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Meal Planner</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nutrient.html">Nutrient Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="exercise.html">Exercise</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="container mt-5">
+        <h2 class="text-center text-primary">Plan Your Meal</h2>
+        <form id="mealForm" class="mt-4 p-4 border rounded bg-light">
+            <!-- Meal Type -->
+            <div class="mb-3">
+                <label for="mealType" class="form-label">Meal Type</label>
+                <select id="mealType" class="form-select" name="mealType">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+            </div>
+
+            <!-- Target Calories -->
+            <div class="mb-3">
+                <label for="calories" class="form-label">Target Calories</label>
+                <input 
+                    type="number" 
+                    id="calories" 
+                    class="form-control" 
+                    name="calories" 
+                    placeholder="Enter your target calories" 
+                    required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Plan Meal</button>
+        </form>
+
+        <!-- Results Section -->
+        <div id="mealResults" class="mt-4"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Meal Planner | Keerthan Reddy
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
